@@ -1,8 +1,7 @@
-"use client";
+"use client"
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-
 import css from './Home.module.css'
 
 const NotFound = () => {

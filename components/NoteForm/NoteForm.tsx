@@ -17,6 +17,7 @@ const schema = Yup.object({
 
 interface NoteFormProps {
   closeModal: () => void;
+  onCreated?: () => void;
 }
 
 export default function NoteForm({ closeModal }: NoteFormProps) {
@@ -41,18 +42,16 @@ export default function NoteForm({ closeModal }: NoteFormProps) {
             Cancel
         </button>
 
-        <Field name="title" placeholder="Title" />
-        <ErrorMessage name="title" component="div" className={css.error} />
-        <Field name="content" as="textarea" placeholder="Content" />
-        <ErrorMessage name="content" component="div" className={css.error} />
         <Field name="tag" as="select">
-        <ErrorMessage name="tag" component="div" className={css.error} />
-          <option>Todo</option>
-          <option>Work</option>
-          <option>Personal</option>
-          <option>Meeting</option>
-          <option>Shopping</option>
+          <option value="Todo">Todo</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Meeting">Meeting</option>
+          <option value="Shopping">Shopping</option>
         </Field>
+
+        <ErrorMessage name="tag" component="div" className={css.error} />
+
 
         <button type="submit">Create note</button>
       </Form>

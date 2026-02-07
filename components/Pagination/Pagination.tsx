@@ -19,8 +19,7 @@ export default function Pagination({
       pageCount={totalPages}
       forcePage={page - 1}
       onPageChange={(selected) =>
-        onPageChange(selected.selected + 1)
-      }
+        onPageChange(selected.selected + 1)}
       previousLabel="Previous"
       nextLabel="Next"
       breakLabel="..."

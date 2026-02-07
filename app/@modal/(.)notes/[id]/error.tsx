@@ -1,5 +1,9 @@
 "use client";
 
-export default function Error() {
-  return <p>Failed to load note.</p>;
+type ErrorProps = {
+  error: Error;
+};
+
+export default function Error({ error }: ErrorProps) {
+  return <p>Failed to load note: {error.message}</p>;
 }

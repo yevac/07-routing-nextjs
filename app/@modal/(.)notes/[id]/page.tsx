@@ -6,7 +6,7 @@ type NotePreviewProps = {
   params: Promise<{ id: string }>;
 };
 
-const NotePreview = async ({ params }: NotePreviewProps) => {
+export default async function NotePreview({ params }: NotePreviewProps) {
   const { id } = await params;
   const queryClient = new QueryClient();
 
@@ -19,5 +19,3 @@ const NotePreview = async ({ params }: NotePreviewProps) => {
       <NotePreviewClient />
     </HydrationBoundary>);
 };
-
-export default NotePreview;
